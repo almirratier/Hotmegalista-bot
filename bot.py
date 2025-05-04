@@ -1,4 +1,3 @@
-
 import os
 from aiogram import Bot, Dispatcher, executor, types
 
@@ -9,9 +8,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=["start"])
 async def start(message: types.Message):
-    await message.answer("🤖 Olá! Seja bem-vindo ao Hot Mega Lista!
-
-Envie o @ do seu canal para cadastro.")
+    await message.answer("🤖 Olá! Seja bem-vindo ao Hot Mega Lista!\n\nEnvie o @ do seu canal para cadastro.")
 
 @dp.message_handler(lambda message: message.text.startswith("@"))
 async def receive_channel(message: types.Message):
@@ -19,3 +16,4 @@ async def receive_channel(message: types.Message):
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
+    
